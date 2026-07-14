@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Strategic Revenue Funnel & Growth Workshop — InfluencerMarketing.ai</title>
+  <meta name="description" content="Strategic synthesis of the InfluencerMarketing.ai revenue funnel and growth workshop — themes, insights, opportunities, risks, action items, and roadmap." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Inter:wght@400;450;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --bg: #fbfbfd;
+      --surface: #ffffff;
+      --surface-2: #f4f4f8;
+      --ink: #16162a;
+      --ink-soft: #3d3d55;
+      --muted: #6b6b82;
+      --faint: #9a9ab0;
+      --line: #e7e7ef;
+      --line-strong: #d6d6e2;
+      --primary: #4f46e5;
+      --primary-dark: #3730a3;
+      --primary-soft: #eef0fe;
+      --accent: #d97706;
+      --accent-soft: #fdf1df;
+      --teal: #0f766e;
+      --teal-soft: #e6f4f2;
+      --rose: #be123c;
+      --rose-soft: #fdeaef;
+      --radius: 16px;
+      --radius-sm: 10px;
+      --shadow-sm: 0 1px 2px rgba(22,22,42,.04), 0 1px 3px rgba(22,22,42,.06);
+      --shadow: 0 4px 24px rgba(22,22,42,.07), 0 1px 3px rgba(22,22,42,.05);
+      --sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      --serif: 'Fraunces', Georgia, 'Times New Roman', serif;
+      --sidebar-w: 288px;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: var(--sans);
+      background: var(--bg);
+      color: var(--ink);
+      line-height: 1.65;
+      font-size: 16.5px;
+      letter-spacing: -0.006em;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+    ::selection { background: var(--primary-soft); color: var(--primary-dark); }
+
+    /* ---------- Layout ---------- */
+    .layout { display: flex; min-height: 100vh; }
+
+    /* ---------- Sidebar ---------- */
+    .sidebar {
+      width: var(--sidebar-w);
+      flex: 0 0 var(--sidebar-w);
+      background: var(--surface);
+      border-right: 1px solid var(--line);
+      position: sticky;
+      top: 0;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      z-index: 50;
+    }
+    .brand {
+      padding: 26px 24px 20px;
+      border-bottom: 1px solid var(--line);
+    }
+    .brand-tag {
+      display: inline-flex; align-items: center; gap: 7px;
+      font-size: 11px; font-weight: 600; letter-spacing: .09em; text-transform: uppercase;
+      color: var(--primary); background: var(--primary-soft);
+      padding: 5px 10px; border-radius: 100px; margin-bottom: 12px;
+    }
+    .brand-tag .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--primary); }
+    .brand h1 {
+      font-family: var(--serif);
+      font-size: 20px; font-weight: 600; line-height: 1.2;
+      letter-spacing: -0.01em; color: var(--ink);
+    }
+    .brand h1 .ai { color: var(--primary); }
+    .brand p { font-size: 12.5px; color: var(--muted); margin-top: 6px; }
+
+    .nav { flex: 1; overflow-y: auto; padding: 14px 12px 20px; }
+    .nav-label {
+      font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase;
+      color: var(--faint); padding: 12px 12px 7px;
+    }
+    .nav-item {
+      display: flex; align-items: center; gap: 12px;
+      width: 100%; text-align: left;
+      padding: 9px 12px; border-radius: var(--radius-sm);
+      border: none; background: transparent; cursor: pointer;
+      font-family: var(--sans); font-size: 14.5px; font-weight: 500; color: var(--ink-soft);
+      transition: background .15s ease, color .15s ease;
+      line-height: 1.3;
+    }
+    .nav-item:hover { background: var(--surface-2); color: var(--ink); }
+    .nav-item.active { background: var(--primary-soft); color: var(--primary-dark); font-weight: 600; }
+    .nav-num {
+      flex: 0 0 24px; height: 24px; display: grid; place-items: center;
+      font-size: 11.5px; font-weight: 600; border-radius: 7px;
+      background: var(--surface-2); color: var(--muted);
+      transition: background .15s ease, color .15s ease;
+    }
+    .nav-item.active .nav-num { background: var(--primary); color: #fff; }
+    .sidebar-foot {
+      padding: 14px 20px; border-top: 1px solid var(--line);
+      font-size: 11.5px; color: var(--faint);
+    }
+
+    /* ---------- Main ---------- */
+    .main { flex: 1; min-width: 0; }
+    .topbar {
+      display: none;
+      position: sticky; top: 0; z-index: 40;
+      align-items: center; justify-content: space-between; gap: 12px;
+      padding: 12px 18px; background: rgba(251,251,253,.85);
+      backdrop-filter: saturate(180%) blur(12px);
+      border-bottom: 1px solid var(--line);
+    }
+    .topbar .tb-title { font-family: var(--serif); font-weight: 600; font-size: 16px; }
+    .topbar .tb-title .ai { color: var(--primary); }
+    .menu-btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 42px; height: 42px; border-radius: 11px;
+      border: 1px solid var(--line-strong); background: var(--surface); cursor: pointer;
+      color: var(--ink);
+    }
+    .menu-btn svg { width: 20px; height: 20px; }
+
+    .content { max-width: 940px; margin: 0 auto; padding: 56px 40px 120px; }
+
+    .panel { display: none; animation: fade .45s ease; }
+    .panel.active { display: block; }
+    @keyframes fade { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: translateY(0); } }
+
+    /* ---------- Section headers ---------- */
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 12px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase;
+      color: var(--primary);
+    }
+    .eyebrow .idx {
+      font-variant-numeric: tabular-nums;
+      background: var(--primary-soft); color: var(--primary-dark);
+      padding: 2px 8px; border-radius: 6px; font-size: 11px;
+    }
+    h2.title {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(28px, 4vw, 40px); line-height: 1.1;
+      letter-spacing: -0.02em; color: var(--ink);
+      margin: 14px 0 0;
+    }
+    .lede {
+      font-size: 18px; line-height: 1.6; color: var(--ink-soft);
+      margin-top: 16px; max-width: 68ch;
+    }
+    .section-rule { height: 1px; background: var(--line); border: 0; margin: 34px 0; }
+
+    h3.sub {
+      font-family: var(--serif); font-weight: 600;
+      font-size: 22px; letter-spacing: -0.01em; color: var(--ink);
+      margin: 40px 0 14px; scroll-margin-top: 80px;
+    }
+    h4.subsub {
+      font-size: 13px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+      color: var(--muted); margin: 22px 0 10px;
+    }
+    p.body { color: var(--ink-soft); margin: 12px 0; max-width: 72ch; }
+    .prose p { color: var(--ink-soft); margin: 12px 0; max-width: 72ch; }
+    strong { color: var(--ink); font-weight: 600; }
+
+    /* ---------- Cards & grids ---------- */
+    .grid { display: grid; gap: 18px; margin-top: 8px; }
+    .grid.cols-2 { grid-template-columns: repeat(2, 1fr); }
+    .grid.cols-3 { grid-template-columns: repeat(3, 1fr); }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 22px 24px;
+      box-shadow: var(--shadow-sm);
+    }
+    .card.pad-lg { padding: 26px 28px; }
+    .card h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); margin-bottom: 4px; }
+    .card p { color: var(--ink-soft); font-size: 15px; }
+
+    .stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 26px 0; }
+    .stat {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 22px; box-shadow: var(--shadow-sm);
+    }
+    .stat .num { font-family: var(--serif); font-size: 40px; font-weight: 600; line-height: 1; color: var(--primary); letter-spacing: -0.02em; }
+    .stat .lbl { font-size: 13.5px; color: var(--muted); margin-top: 10px; }
+
+    /* Theme / opportunity numbered cards */
+    .item-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px 26px; box-shadow: var(--shadow-sm); margin-top: 18px;
+      position: relative; overflow: hidden;
+    }
+    .item-card::before {
+      content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 4px;
+      background: linear-gradient(var(--primary), var(--primary-dark));
+    }
+    .item-head { display: flex; align-items: flex-start; gap: 16px; }
+    .item-badge {
+      flex: 0 0 auto; width: 40px; height: 40px; border-radius: 11px;
+      display: grid; place-items: center; font-family: var(--serif); font-weight: 600;
+      font-size: 17px; background: var(--primary-soft); color: var(--primary-dark);
+    }
+    .item-head h3 { font-family: var(--serif); font-size: 20px; font-weight: 600; letter-spacing: -0.01em; color: var(--ink); line-height: 1.25; }
+    .item-card .prose { margin-top: 2px; }
+
+    /* Lists */
+    ul.clean, ol.clean { list-style: none; margin: 12px 0; }
+    ul.clean li, ol.clean li {
+      position: relative; padding-left: 26px; margin: 9px 0; color: var(--ink-soft);
+      max-width: 72ch;
+    }
+    ul.clean li::before {
+      content: ""; position: absolute; left: 4px; top: 11px;
+      width: 6px; height: 6px; border-radius: 50%; background: var(--primary);
+    }
+    ol.clean { counter-reset: c; }
+    ol.clean li { counter-increment: c; }
+    ol.clean li::before {
+      content: counter(c); position: absolute; left: 0; top: 1px;
+      width: 20px; height: 20px; border-radius: 6px; font-size: 11px; font-weight: 700;
+      display: grid; place-items: center; background: var(--surface-2); color: var(--muted);
+    }
+    .chip-list { display: flex; flex-wrap: wrap; gap: 8px; margin: 14px 0; }
+    .chip {
+      font-size: 13px; font-weight: 500; color: var(--ink-soft);
+      background: var(--surface-2); border: 1px solid var(--line);
+      padding: 6px 12px; border-radius: 100px;
+    }
+
+    /* Callout / quote */
+    .callout {
+      border-left: 3px solid var(--accent); background: var(--accent-soft);
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+      padding: 16px 20px; margin: 18px 0; color: #7c4a06;
+    }
+    .callout.info { border-color: var(--primary); background: var(--primary-soft); color: var(--primary-dark); }
+    .callout.warn { border-color: var(--rose); background: var(--rose-soft); color: #8f0d2c; }
+    .callout .k { font-weight: 700; font-size: 12px; letter-spacing: .05em; text-transform: uppercase; display: block; margin-bottom: 4px; }
+
+    blockquote.pull {
+      font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.45;
+      color: var(--ink); border-left: 4px solid var(--primary); padding: 6px 0 6px 22px;
+      margin: 22px 0; letter-spacing: -0.01em;
+    }
+
+    .quote-card {
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius);
+      padding: 24px 26px; box-shadow: var(--shadow-sm); margin-top: 18px;
+    }
+    .quote-card .qmark { font-family: var(--serif); font-size: 46px; line-height: .6; color: var(--primary-soft); display: block; height: 22px; }
+    .quote-card q { font-family: var(--serif); font-style: italic; font-size: 19px; line-height: 1.5; color: var(--ink); quotes: none; display: block; }
+    .quote-card .why { margin-top: 14px; font-size: 14px; color: var(--muted); }
+    .quote-card .why b { color: var(--primary-dark); font-weight: 600; }
+
+    /* Priority badges */
+    .badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      font-size: 11.5px; font-weight: 600; letter-spacing: .03em;
+      padding: 4px 10px; border-radius: 100px; white-space: nowrap;
+    }
+    .badge.crit { background: var(--rose-soft); color: #a1112f; }
+    .badge.high { background: var(--accent-soft); color: #9a5808; }
+    .badge.med { background: var(--teal-soft); color: #0b5c55; }
+    .badge.class { background: var(--primary-soft); color: var(--primary-dark); }
+
+    .meta-row { display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 4px; align-items: center; }
+
+    /* Action / detail rows */
+    .detail-line { display: flex; gap: 10px; font-size: 14.5px; margin: 6px 0; color: var(--ink-soft); }
+    .detail-line .dk { flex: 0 0 auto; font-weight: 600; color: var(--muted); min-width: 130px; }
+
+    /* Roadmap timeline */
+    .timeline { position: relative; margin: 24px 0; padding-left: 4px; }
+    .phase { position: relative; padding: 0 0 8px 30px; }
+    .phase::before {
+      content: ""; position: absolute; left: 6px; top: 6px; bottom: -8px; width: 2px; background: var(--line-strong);
+    }
+    .phase:last-child::before { display: none; }
+    .phase .node {
+      position: absolute; left: 0; top: 3px; width: 14px; height: 14px; border-radius: 50%;
+      background: var(--surface); border: 3px solid var(--primary);
+    }
+    .phase h3 { font-family: var(--serif); font-size: 19px; font-weight: 600; color: var(--ink); margin-bottom: 2px; }
+    .phase .when { font-size: 12px; font-weight: 600; letter-spacing: .05em; text-transform: uppercase; color: var(--primary); }
+
+    /* Two-column split for Q&A / alignment */
+    .split { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; margin-top: 18px; }
+    .split .card h3 { font-size: 17px; }
+
+    /* hero */
+    .hero { margin-bottom: 8px; }
+    .hero .kicker {
+      display: inline-flex; align-items: center; gap: 8px; font-size: 12.5px; font-weight: 600;
+      letter-spacing: .06em; text-transform: uppercase; color: var(--muted);
+    }
+    .hero .kicker .bar { width: 22px; height: 2px; background: var(--primary); }
+    .hero h2 {
+      font-family: var(--serif); font-weight: 600;
+      font-size: clamp(34px, 6vw, 56px); line-height: 1.04; letter-spacing: -0.025em;
+      margin: 16px 0 0; color: var(--ink);
+    }
+    .hero h2 .em { color: var(--primary); font-style: italic; }
+
+    .agree-list { display: grid; gap: 10px; margin-top: 16px; }
+    .agree {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm);
+      padding: 13px 16px; box-shadow: var(--shadow-sm);
+    }
+    .agree .tick {
+      flex: 0 0 auto; width: 22px; height: 22px; border-radius: 6px; background: var(--teal-soft);
+      display: grid; place-items: center; margin-top: 1px;
+    }
+    .agree .tick svg { width: 13px; height: 13px; color: var(--teal); }
+    .agree p { margin: 0; font-size: 15px; color: var(--ink-soft); }
+
+    /* footer nav (prev/next) */
+    .pager { display: flex; justify-content: space-between; gap: 12px; margin-top: 48px; padding-top: 28px; border-top: 1px solid var(--line); }
+    .pager button {
+      flex: 1; text-align: left; background: var(--surface); border: 1px solid var(--line);
+      border-radius: var(--radius); padding: 14px 18px; cursor: pointer; font-family: var(--sans);
+      transition: border-color .15s ease, box-shadow .15s ease; box-shadow: var(--shadow-sm);
+    }
+    .pager button:hover { border-color: var(--primary); box-shadow: var(--shadow); }
+    .pager button:disabled { opacity: 0; pointer-events: none; }
+    .pager .dir { font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+    .pager .lab { font-family: var(--serif); font-size: 16px; font-weight: 600; color: var(--ink); margin-top: 3px; }
+    .pager .next { text-align: right; }
+
+    /* backdrop for mobile drawer */
+    .backdrop {
+      display: none; position: fixed; inset: 0; background: rgba(22,22,42,.4);
+      z-index: 45; backdrop-filter: blur(2px);
+    }
+    .backdrop.show { display: block; }
+
+    .note { font-size: 13.5px; color: var(--faint); font-style: italic; margin-top: 20px; }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .grid.cols-3 { grid-template-columns: repeat(2, 1fr); }
+      .stat-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (max-width: 860px) {
+      .topbar { display: flex; }
+      .sidebar {
+        position: fixed; top: 0; left: 0; height: 100vh;
+        transform: translateX(-100%); transition: transform .28s cubic-bezier(.4,0,.2,1);
+        box-shadow: 0 0 40px rgba(0,0,0,.15);
+      }
+      .sidebar.open { transform: translateX(0); }
+      .content { padding: 30px 22px 100px; }
+      .grid.cols-2, .grid.cols-3 { grid-template-columns: 1fr; }
+      .split { grid-template-columns: 1fr; }
+      .stat-grid { grid-template-columns: 1fr; gap: 12px; }
+      .lede { font-size: 16.5px; }
+      body { font-size: 16px; }
+    }
+    @media (max-width: 460px) {
+      .content { padding: 24px 16px 90px; }
+      .item-card, .card, .quote-card { padding: 18px 18px; }
+      .pager { flex-direction: column; }
+      .pager .next { text-align: left; }
+    }
+  </style>
+</head>
+<body>
+  <div class="backdrop" id="backdrop"></div>
+  <div class="layout">
+    <!-- ============ SIDEBAR ============ -->
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <span class="brand-tag"><span class="dot"></span> Workshop Synthesis</span>
+        <h1>InfluencerMarketing<span class="ai">.ai</span></h1>
+        <p>Strategic Revenue Funnel &amp; Growth Workshop</p>
+      </div>
+      <nav class="nav" id="nav">
+        <div class="nav-label">Sections</div>
+        <!-- nav items injected by JS -->
+      </nav>
+      <div class="sidebar-foot">
+        Cross-functional strategy session · Synthesis document
+      </div>
+    </aside>
+
+    <!-- ============ MAIN ============ -->
+    <div class="main">
+      <div class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Open navigation">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+        </button>
+        <div class="tb-title">InfluencerMarketing<span class="ai">.ai</span></div>
+        <div style="width:42px"></div>
+      </div>
+
+      <main class="content" id="content">
+        <!-- ================= OVERVIEW ================= -->
+        <section class="panel active" id="p-overview">
+          <div class="hero">
+            <div class="kicker"><span class="bar"></span> Executive Summary</div>
+            <h2>Finding the revenue leaks — and the <span class="em">growth engines</span> hiding in plain sight.</h2>
+            <p class="lede">A cross-functional workshop to identify the most important revenue leaks and growth opportunities across InfluencerMarketing.ai's customer journey — from acquisition through to advocacy.</p>
+          </div>
+
+          <div class="stat-grid">
+            <div class="stat"><div class="num">80%</div><div class="lbl">of future revenue is expected to come from existing customers</div></div>
+            <div class="stat"><div class="num">70%</div><div class="lbl">the typical maturity at which products are launched — before enterprise-ready</div></div>
+            <div class="stat"><div class="num">6</div><div class="lbl">customer-journey stages reviewed, from acquisition to delight</div></div>
+          </div>
+
+          <h3 class="sub">Strongest areas of agreement</h3>
+          <div class="agree-list">
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>The company should first strengthen its current and largest source of revenue.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Enterprise growth requires both stronger acquisition and stronger conversion.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Expansion within existing customers must become a major revenue engine.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Onboarding quality is a critical determinant of conversion, retention, and expansion.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Products are often launched before they are sufficiently enterprise-ready, creating lost conversion and expansion opportunities.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>The company lacks a consistent enterprise demand-generation model.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Customer, sales, finance, and account-management data is fragmented and unreliable.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Strategic decisions are not always communicated or implemented coherently across the organization.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Customer delight, referrals, case studies, and brand advocacy should become formal stages in the enterprise customer journey.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Thought leadership and content marketing can support enterprise growth — but only if paired with a clear distribution and conversion strategy.</p></div>
+          </div>
+
+          <div class="callout info">
+            <span class="k">Most urgent next steps</span>
+            Define measurable funnel stages, establish enterprise product-readiness standards, centralize customer and revenue data, formalize account expansion processes, and appoint clear ownership for enterprise marketing and demand generation.
+          </div>
+
+          <hr class="section-rule" />
+
+          <h3 class="sub">Meeting context &amp; objectives</h3>
+          <p class="body">The meeting was a cross-functional workshop designed to identify weaknesses, leaks, and opportunities across the company's revenue funnel. The group reviewed multiple stages of the customer journey — and the conversation deliberately connected sales, product, customer success, finance, account management, internal communication, and data infrastructure.</p>
+
+          <div class="chip-list">
+            <span class="chip">Acquisition</span>
+            <span class="chip">Conversion</span>
+            <span class="chip">Onboarding</span>
+            <span class="chip">Retention</span>
+            <span class="chip">Expansion</span>
+            <span class="chip">Delight &amp; Advocacy</span>
+          </div>
+
+          <h4 class="subsub">The workshop set out to determine</h4>
+          <ol class="clean">
+            <li>Where the company is currently losing revenue.</li>
+            <li>Which stages of the funnel deserve the most attention.</li>
+            <li>How those weaknesses should be measured.</li>
+            <li>What organizational or operational changes may be required.</li>
+            <li>How enterprise and SMB growth strategies should differ.</li>
+          </ol>
+
+          <blockquote class="pull">"Where does it show in the numbers?"</blockquote>
+          <p class="body">A recurring principle throughout the session: every perceived problem should eventually be linked to a measurable indicator — converting broad concerns into measurable business problems.</p>
+        </section>
+
+        <!-- ================= THEMES ================= -->
+        <section class="panel" id="p-themes">
+          <div class="eyebrow"><span class="idx">01</span> Key Discussion Themes</div>
+          <h2 class="title">Twelve themes from the room</h2>
+          <p class="lede">The discussion clustered around twelve interconnected themes — spanning revenue strategy, product readiness, operations, data, and organizational execution.</p>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">1</div><h3>Protect &amp; improve the existing revenue base</h3></div>
+            <div class="prose">
+              <p>The company's first priority should be improving the area that currently produces the largest amount of revenue.</p>
+              <blockquote class="pull">"This currently is our largest source of revenue… you improve your current source of revenue."</blockquote>
+              <p>Rather than focusing exclusively on new initiatives, the company should first optimize the revenue stream that is already proven. This could include:</p>
+              <ul class="clean">
+                <li>Improving conversion within the current customer segment</li>
+                <li>Increasing retention</li>
+                <li>Increasing usage of existing products</li>
+                <li>Expanding customer contracts</li>
+                <li>Reducing service or product friction</li>
+                <li>Identifying the most profitable customer types and use cases</li>
+              </ul>
+              <div class="callout"><span class="k">Why it matters</span>Improvements to a proven revenue source may generate faster and more predictable returns than building an entirely new motion.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">2</div><h3>Enterprise requires both acquisition <em>and</em> conversion</h3></div>
+            <div class="prose">
+              <p>Enterprise growth cannot be reduced to a single funnel stage. The group identified two separate but connected needs: generate more qualified enterprise opportunities, and improve the ability to convert them.</p>
+              <blockquote class="pull">"For enterprise, I think we need acquire and convert."</blockquote>
+              <p>The problem isn't a lack of market opportunity — the opposite. The enterprise opportunity is substantial but difficult to operationalize.</p>
+              <blockquote class="pull">"There's so much opportunity there… it's just a big old wall that we need to start welcoming people through."</blockquote>
+              <h4 class="subsub">Distinct motions to strategize separately</h4>
+              <div class="chip-list">
+                <span class="chip">Stagwell-sourced enterprise</span>
+                <span class="chip">Direct enterprise</span>
+                <span class="chip">Brand-direct sales</span>
+                <span class="chip">Technology-led enterprise</span>
+                <span class="chip">Agency relationships</span>
+                <span class="chip">Existing-customer expansion</span>
+              </div>
+              <p>Treating all enterprise leads as a single category may obscure the different requirements of each motion.</p>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">3</div><h3>Expansion should become a core revenue engine</h3></div>
+            <div class="prose">
+              <blockquote class="pull">"Ultimately, 80% of revenue is going to come from existing customers. It has to."</blockquote>
+              <p>The company already has products and capabilities that existing customers are not using.</p>
+              <div class="split">
+                <div class="card"><h3>For SMB customers</h3><ul class="clean"><li>Limited product growth</li><li>Limited feature adoption</li><li>Limited workspace growth</li><li>Limited structured upselling</li></ul></div>
+                <div class="card"><h3>For enterprise customers</h3><ul class="clean"><li>One use case → multiple use cases</li><li>One workspace → multiple workspaces</li><li>One department → multiple departments</li><li>One brand → additional brands</li><li>One geography → additional markets</li></ul></div>
+              </div>
+              <div class="callout"><span class="k">Strategic significance</span>Expansion should not be an opportunistic activity that happens after a successful project — it should be designed into the original customer journey. Sales, onboarding, product configuration, customer success, and account management should all prepare customers for future expansion.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">4</div><h3>Customer delight, advocacy &amp; referrals</h3></div>
+            <div class="prose">
+              <p>The group discussed adding "delight" as a formal stage — the point at which a customer becomes willing to refer, introduce, participate in a case study, allow use of its name or logo, speak publicly, or bring the technology to a future employer.</p>
+              <blockquote class="pull">"They go to another company, they bring their technology with them."</blockquote>
+              <p>A relationship may be genuinely successful when a customer says <em>yes</em> to a case study, a reference, an introduction, or an expanded relationship.</p>
+              <div class="callout warn"><span class="k">Important qualification</span>Advocacy cannot be created before customer success exists. "We must have acquire and succeed with enterprise clients in order to do the delight part."</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">5</div><h3>Rights to use customer names, logos &amp; case studies</h3></div>
+            <div class="prose">
+              <p>The discussion focused on whether InfluencerMarketing.ai can publicly state that it works with P&amp;G and possibly use related brand logos. Potential uses include website logos, sales decks, competitive targeting, enterprise outbound, case studies, social proof, and demand-generation campaigns.</p>
+              <p>The group correctly identified that contractual permission must be verified first — leading to an explicit follow-up to review the contract and confirm in writing what public claims are permitted (names, logos, individual brands, and which channels).</p>
+              <div class="callout info"><span class="k">Parking lot</span>This was appropriately placed in a "parking lot" rather than allowing the legal-commercial question to derail the broader workshop.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">6</div><h3>Onboarding is a major revenue leak</h3></div>
+            <div class="prose">
+              <p><strong>Ron</strong> identified onboarding as his main concern. The customer's first experience has a disproportionate impact on product understanding, confidence, initial adoption, time to value, conversion, retention, and expansion.</p>
+              <h4 class="subsub">Potential onboarding metrics</h4>
+              <ul class="clean">
+                <li>Number of successful onboarding sessions &amp; demos</li>
+                <li>Time from signing to first meaningful product use</li>
+                <li>Time to first completed campaign · time to first insight or result</li>
+                <li>Percentage who complete onboarding · who onboard independently · who require CS intervention</li>
+                <li>Product usage after 20, 30, or 45 days</li>
+                <li>Retention rates segmented by onboarding experience</li>
+              </ul>
+              <div class="callout"><span class="k">Key insight</span>Onboarding should not be measured only as an activity completed by the customer-success team. It should be measured by the customer's resulting behavior and progress — and the measurement system must isolate onboarding-related variables rather than relying only on overall retention.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">7</div><h3>Products are launched before they're enterprise-ready</h3></div>
+            <div class="prose">
+              <blockquote class="pull">"We launch product very, very quickly, and it's usually 70% of the way there."</blockquote>
+              <p>Rapid product development is an advantage, but products that perform adequately in early or lower-pressure environments may not withstand enterprise requirements. The resulting pattern:</p>
+              <ol class="clean">
+                <li>A product is launched quickly</li>
+                <li>Enterprise customers expose weaknesses</li>
+                <li>The product fails to meet expected standards</li>
+                <li>The company struggles to convert the opportunity</li>
+                <li>The company struggles to expand the relationship</li>
+                <li>Revenue opportunities are lost</li>
+              </ol>
+              <h4 class="subsub">Where enterprise pressure exposes weakness</h4>
+              <div class="chip-list">
+                <span class="chip">Reliability</span><span class="chip">Data quality</span><span class="chip">Workflow maturity</span><span class="chip">User permissions</span><span class="chip">Reporting</span><span class="chip">Integrations</span><span class="chip">Scalability</span><span class="chip">Security</span><span class="chip">Implementation support</span><span class="chip">Customer-facing polish</span><span class="chip">Repeatability</span><span class="chip">Error handling</span><span class="chip">Operational documentation</span>
+              </div>
+              <div class="callout"><span class="k">Strategic implication</span>The company may need different levels of product readiness for different customer segments, and a clear framework for deciding which technologies can be sold to which customer types and at what stage of maturity.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">8</div><h3>Strategic shifts are implemented chaotically</h3></div>
+            <div class="prose">
+              <blockquote class="pull">"The process for actualizing strategic shifts [is] chaotic and lacking holistic communication."</blockquote>
+              <p>A disconnect between leadership decisions and organizational execution — described with the analogy of a cartoon character running off a cliff, with the body falling before the head. Decisions are made centrally, but teams receive different context, act at different speeds, and continue working under old assumptions.</p>
+              <div class="callout warn"><span class="k">Why it matters</span>Even good strategy will underperform without a disciplined process for communicating decisions, assigning owners, updating systems, aligning incentives, setting deadlines, measuring adoption, closing old initiatives, and confirming implementation. This is an operating-model problem, not just a communication problem.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">9</div><h3>Account management is not consistently success-based</h3></div>
+            <div class="prose">
+              <blockquote class="pull">"Consistent, strategic, success-based account management."</blockquote>
+              <p>Customer-success and account-management teams lack a sufficiently organized, shared view of customer goals, relationships, activities, usage, results, expansion opportunities, risks, stakeholders, commitments, and account history. Without this, account management becomes reactive rather than strategic.</p>
+              <h4 class="subsub">Success-based account management should include</h4>
+              <ul class="clean">
+                <li>A defined desired outcome for every customer &amp; an agreed success plan</li>
+                <li>Clear milestones · product usage and outcome tracking</li>
+                <li>Periodic business reviews · risk indicators</li>
+                <li>Expansion triggers · referral and advocacy triggers</li>
+                <li>Documented stakeholder relationships · internal ownership</li>
+              </ul>
+              <p>The company may be managing interactions rather than systematically managing customer outcomes.</p>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">10</div><h3>Customer &amp; revenue data is fragmented</h3></div>
+            <div class="prose">
+              <blockquote class="pull">"I had to go to at least four different people, and not one of them had access to everything."</blockquote>
+              <p>A strong signal of fragmented systems, unclear ownership, and limited data accessibility — affecting sales, customer success, account management, finance, leadership, marketing, and product planning. The group discussed Close CRM but emphasized the problem is larger than the software.</p>
+              <blockquote class="pull">"Even if we go to Salesforce, trash in, trash out."</blockquote>
+              <p>Two connected problems: the current CRM may not support all required workflows, <em>and</em> the company lacks consistent standards for entering, validating, owning, and maintaining data.</p>
+              <h4 class="subsub">Issues mentioned or implied</h4>
+              <ul class="clean">
+                <li>No single source of truth · inconsistent access · incomplete records · incorrect new data</li>
+                <li>Finance does not fully trust CRM figures</li>
+                <li>Sales and customer-success data are not fully aligned</li>
+                <li>Ownership of data quality is unclear · customer activities are not consistently captured</li>
+                <li>Reporting requires manual investigation across multiple people</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">11</div><h3>The company lacks a demand-generation model</h3></div>
+            <div class="prose">
+              <blockquote class="pull">"We currently don't really have a model for demand generation."</blockquote>
+              <p>Low-hanging opportunities include thought leadership, webinars, podcasts, value-based and customer-focused content, educational material, and market commentary. But creating content is not enough — content requires an activation and distribution plan.</p>
+              <h4 class="subsub">Required components of a demand-generation model</h4>
+              <div class="chip-list">
+                <span class="chip">Defined target audience</span><span class="chip">Clear messaging</span><span class="chip">Content themes</span><span class="chip">Channel strategy</span><span class="chip">Distribution plan</span><span class="chip">Paid &amp; organic amplification</span><span class="chip">Expected reach</span><span class="chip">Conversion assumptions</span><span class="chip">Lead capture</span><span class="chip">Sales follow-up</span><span class="chip">Measurement &amp; attribution</span><span class="chip">Budget linked to return</span>
+              </div>
+              <blockquote class="pull">"We put one pound in, we get one pound and one pence back."</blockquote>
+              <p>The return was illustrative, but the principle holds: marketing investment should be tied to expected measurable outcomes.</p>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">12</div><h3>Enterprise marketing needs clear leadership</h3></div>
+            <div class="prose">
+              <blockquote class="pull">"That's why I want a leader for enterprise marketing."</blockquote>
+              <p>Enterprise demand generation will not emerge consistently without a person responsible for building the strategy, growing the program, aligning content and distribution, defining target audiences, connecting marketing to sales, measuring results, managing budget, and maintaining momentum.</p>
+              <div class="callout info"><span class="k">Resource + accountability</span>Without clear leadership, enterprise marketing may remain a collection of disconnected initiatives rather than a repeatable growth engine.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= INSIGHTS ================= -->
+        <section class="panel" id="p-insights">
+          <div class="eyebrow"><span class="idx">02</span> Strategic Insights</div>
+          <h2 class="title">Reading between the themes</h2>
+          <p class="lede">Seven cross-cutting insights that reframe how the individual themes connect — and where the leverage really sits.</p>
+
+          <div class="grid cols-2" style="margin-top:24px">
+            <div class="card pad-lg"><h3>1 · The funnel is not a sequence of independent stages</h3><p>Acquisition, conversion, onboarding, retention, expansion, and advocacy are deeply interconnected: poor product readiness reduces conversion; poor onboarding reduces retention; poor retention eliminates expansion; weak success prevents case studies; a lack of case studies weakens acquisition. A cross-functional revenue operating model is needed.</p></div>
+            <div class="card pad-lg"><h3>2 · Expansion should begin during the initial sale</h3><p>The company thinks about expansion mainly after adoption. A stronger model defines the expansion path during the original sales process — initial use case, adjacent use cases, additional departments, brands, workspaces, geographies, and the stakeholders and conditions required.</p></div>
+            <div class="card pad-lg"><h3>3 · Enterprise readiness is a commercial capability</h3><p>"70%-complete" is about more than technical functionality. Enterprise readiness also includes sales positioning, customer expectations, implementation, support, security, contracts, reporting, account management, escalation, and success measurement. Establish an enterprise-readiness gate before broad enterprise sale.</p></div>
+            <div class="card pad-lg"><h3>4 · Advocacy can compound into acquisition</h3><p>Delighted enterprise customers provide referrals, introductions, case studies, brand credibility, website proof, conference appearances, competitive differentiation, and future relationships when executives change companies. Advocacy should have measurable goals, ownership, and process.</p></div>
+            <div class="card pad-lg"><h3>5 · Data fragmentation blocks strategy and execution</h3><p>Needing multiple people to assemble basic information suggests leadership lacks a reliable operating view — affecting forecasting, prioritization, expansion, risk management, segmentation, product planning, and financial reconciliation. Governance must precede any new system.</p></div>
+            <div class="card pad-lg"><h3>6 · Content creation is being confused with demand generation</h3><p>A podcast, webinar, or article is not demand generation by itself. It requires targeting, distribution, conversion, follow-up, attribution, and optimization. Invest heavily in formats only once you know how they'll reach and influence the right audience.</p></div>
+          </div>
+
+          <div class="item-card" style="margin-top:24px">
+            <div class="item-head"><div class="item-badge">7</div><h3>Strategic volatility may be producing hidden costs</h3></div>
+            <div class="prose">
+              <p>Frequent or poorly communicated strategic shifts can create duplicated work, conflicting priorities, lost employee time, inconsistent customer messaging, broken reporting, delayed execution, reduced accountability, and difficulty measuring performance.</p>
+              <p>The "highs and lows" in company metrics may not result only from market conditions — they may partially reflect internal execution instability.</p>
+              <p class="note">This is an inferred insight based on the discussion.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= OPPORTUNITIES ================= -->
+        <section class="panel" id="p-opportunities">
+          <div class="eyebrow"><span class="idx">03</span> Best Ideas &amp; Opportunities</div>
+          <h2 class="title">Seven opportunities worth building</h2>
+          <p class="lede">Each opportunity is classified by horizon, tied to the problem it solves, and paired with a concrete recommended first step.</p>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">1</div><h3>Build a structured enterprise expansion map</h3></div>
+            <div class="meta-row"><span class="badge class">Near-term strategic</span></div>
+            <div class="prose">
+              <p>A repeatable model for expanding from one workspace, brand, use case, or team into others.</p>
+              <div class="detail-line"><span class="dk">Problem solved</span><span>Existing customers are not using the company's full product portfolio.</span></div>
+              <div class="detail-line"><span class="dk">Value</span><span>Higher revenue per account, stronger retention, lower dependence on new-logo acquisition.</span></div>
+              <h4 class="subsub">Requirements</h4>
+              <div class="chip-list"><span class="chip">Account mapping</span><span class="chip">Stakeholder mapping</span><span class="chip">Product-use-case catalog</span><span class="chip">Expansion triggers</span><span class="chip">CS coordination</span><span class="chip">Pricing &amp; packaging</span><span class="chip">Documented proof of value</span></div>
+              <div class="callout info"><span class="k">Recommended next step</span>Pilot an expansion map for the ten highest-potential existing enterprise accounts.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">2</div><h3>Establish an enterprise product-readiness gate</h3></div>
+            <div class="meta-row"><span class="badge class">Quick win → long-term capability</span></div>
+            <div class="prose">
+              <p>Before a product is sold into enterprise environments, evaluate whether it meets predefined standards.</p>
+              <div class="detail-line"><span class="dk">Problem solved</span><span>Products launched at partial maturity are creating failed conversions and lost expansion opportunities.</span></div>
+              <h4 class="subsub">Requirements</h4>
+              <div class="chip-list"><span class="chip">Product checklist</span><span class="chip">Security criteria</span><span class="chip">Reliability criteria</span><span class="chip">Implementation plan</span><span class="chip">Support plan</span><span class="chip">Reporting requirements</span><span class="chip">CS readiness</span><span class="chip">Executive approval</span></div>
+              <div class="callout info"><span class="k">Recommended next step</span>Review the last five enterprise opportunities lost or delayed because of product limitations, and use them to draft the first readiness checklist.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">3</div><h3>Formalize the customer delight &amp; advocacy stage</h3></div>
+            <div class="meta-row"><span class="badge class">Near-term</span></div>
+            <div class="prose">
+              <p>Add a defined post-success stage focused on advocacy.</p>
+              <h4 class="subsub">Potential outputs</h4>
+              <div class="chip-list"><span class="chip">Case study</span><span class="chip">Quote</span><span class="chip">Referral</span><span class="chip">Introduction</span><span class="chip">Logo permission</span><span class="chip">Website listing</span><span class="chip">Webinar participation</span><span class="chip">Award submission</span></div>
+              <div class="callout info"><span class="k">Recommended next step</span>Define the conditions that make an account eligible for an advocacy request.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">4</div><h3>Build an enterprise demand-generation model</h3></div>
+            <div class="meta-row"><span class="badge class">Long-term strategic</span></div>
+            <div class="prose">
+              <p>Create a measurable system for generating direct enterprise opportunities.</p>
+              <h4 class="subsub">Components</h4>
+              <div class="chip-list"><span class="chip">Ideal customer profile</span><span class="chip">Priority industries</span><span class="chip">Buyer personas</span><span class="chip">Content pillars</span><span class="chip">Webinars</span><span class="chip">Podcasts</span><span class="chip">Thought leadership</span><span class="chip">Account-based marketing</span><span class="chip">Distribution</span><span class="chip">Lead capture</span><span class="chip">Sales follow-up</span><span class="chip">Attribution</span></div>
+              <div class="callout info"><span class="k">Recommended next step</span>Select one audience, one content theme, one distribution channel, and one conversion goal for an initial 60-day pilot.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">5</div><h3>Create a customer &amp; revenue data governance program</h3></div>
+            <div class="meta-row"><span class="badge crit">Immediate operational priority</span></div>
+            <div class="prose">
+              <p>Define what data must be captured, which system owns each field, who enters it, who validates it, how often it's updated, which teams can access it, how finance reconciles it, and which metrics leadership trusts.</p>
+              <div class="callout info"><span class="k">Recommended next step</span>Conduct a data audit before deciding whether to retain Close CRM or migrate to another platform.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">6</div><h3>Implement success-based account management</h3></div>
+            <div class="meta-row"><span class="badge class">Near-term</span></div>
+            <div class="prose">
+              <p>Every strategic account should have a customer objective, desired outcome, success metrics, stakeholder map, usage data, risk status, upcoming actions, expansion hypothesis, and advocacy potential.</p>
+              <div class="callout info"><span class="k">Recommended next step</span>Create a one-page success plan template and test it with five accounts.</div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">7</div><h3>Create a strategic change implementation process</h3></div>
+            <div class="meta-row"><span class="badge crit">Immediate organizational priority</span></div>
+            <div class="prose">
+              <p>Every major strategic decision should include a decision summary, rationale, executive owner, affected departments, required process and system changes, communication plan, implementation deadline, measurement plan, and review date.</p>
+              <div class="callout info"><span class="k">Recommended next step</span>Use the next major strategic decision as a pilot for the process.</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= ALIGNMENT & OPEN QUESTIONS ================= -->
+        <section class="panel" id="p-alignment">
+          <div class="eyebrow"><span class="idx">04</span> Alignment &amp; Open Questions</div>
+          <h2 class="title">What's decided — and what's still open</h2>
+          <p class="lede">Areas of broad agreement stand alongside the unresolved questions that the next decision-making session must close.</p>
+
+          <h3 class="sub">Areas of alignment</h3>
+          <div class="agree-list">
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Enterprise acquisition and conversion both require improvement.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Expansion from existing customers is a major future revenue opportunity.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Customer delight and advocacy belong in the customer journey — and advocacy should follow actual customer success.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Onboarding is a major factor in conversion and retention.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Revenue leaks should be tied to measurable numbers.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Product maturity affects both conversion and expansion.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Enterprise lead generation requires a stronger strategy.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Customer and financial data is fragmented — and a new CRM alone will not solve poor data practices.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Thought leadership is valuable only if supported by distribution.</p></div>
+            <div class="agree"><span class="tick"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><p>Enterprise marketing requires clear leadership and ownership.</p></div>
+          </div>
+
+          <div class="callout warn" style="margin-top:24px">
+            <span class="k">No final decision yet on</span>
+            Whether to replace Close CRM · who should lead enterprise marketing · which funnel stage receives the highest company-wide priority · the exact measurement framework · whether P&amp;G or related logos can be used publicly · which enterprise demand-generation channels should be funded.
+          </div>
+
+          <hr class="section-rule" />
+
+          <h3 class="sub">Open questions &amp; unresolved issues</h3>
+          <div class="grid cols-2">
+            <div class="card"><h3>Customer &amp; brand usage rights</h3><ul class="clean"><li>Can we publicly state that we work with P&amp;G?</li><li>Can the P&amp;G logo — and individual brand logos — be used?</li><li>Can customer names appear on the website?</li><li>Can they be used in outbound targeting or sales decks?</li><li>Is written approval required beyond the contract?</li></ul></div>
+            <div class="card"><h3>Funnel measurement</h3><ul class="clean"><li>What is the official definition of each funnel stage?</li><li>Which metric indicates success or leakage at each stage?</li><li>How do we distinguish onboarding failure from product failure?</li><li>How is expansion measured across workspaces, brands, products, and revenue?</li></ul></div>
+            <div class="card"><h3>Enterprise product readiness</h3><ul class="clean"><li>What minimum maturity is required before selling to enterprise?</li><li>Who approves enterprise readiness?</li><li>Should some products be limited to pilots or SMB?</li><li>Which past opportunities were lost because the product wasn't ready?</li></ul></div>
+            <div class="card"><h3>Account management</h3><ul class="clean"><li>Who owns the strategic success plan for each account?</li><li>How frequently should account health be reviewed?</li><li>What data must CS and account-management teams maintain?</li><li>How should success, risk, expansion, and advocacy be scored?</li></ul></div>
+            <div class="card"><h3>Data infrastructure</h3><ul class="clean"><li>Is Close CRM fundamentally unsuitable?</li><li>Which workflows are currently unsupported?</li><li>What belongs in the CRM vs finance systems vs product analytics?</li><li>Who is accountable for data accuracy?</li><li>What would justify a migration to Salesforce or another platform?</li></ul></div>
+            <div class="card"><h3>Enterprise demand generation</h3><ul class="clean"><li>Who owns enterprise marketing?</li><li>What is the ideal customer profile?</li><li>Which channels are likely to produce qualified demand?</li><li>What content should be created, and what's the distribution plan?</li><li>How will ROI be measured, and how much budget is justified?</li></ul></div>
+          </div>
+        </section>
+
+        <!-- ================= RISKS ================= -->
+        <section class="panel" id="p-risks">
+          <div class="eyebrow"><span class="idx">05</span> Risks, Concerns &amp; Constraints</div>
+          <h2 class="title">What could go wrong</h2>
+          <p class="lede">Risks raised explicitly in the room, alongside inferred risks that follow from the same dynamics.</p>
+
+          <div class="split">
+            <div class="card pad-lg">
+              <h3 style="color:var(--rose)">Explicitly mentioned</h3>
+              <ul class="clean">
+                <li>Enterprise sales lack sufficient momentum.</li>
+                <li>Products may be sold before they are enterprise-ready.</li>
+                <li>Existing customers are not using all available products.</li>
+                <li>Customer data is fragmented; CRM data is unreliable.</li>
+                <li>Finance may not trust sales data.</li>
+                <li>Strategic shifts are implemented chaotically.</li>
+                <li>Content efforts may be wasted without distribution.</li>
+                <li>The company may request case studies before earning advocacy.</li>
+                <li>Public use of customer logos may violate contractual limitations.</li>
+              </ul>
+            </div>
+            <div class="card pad-lg">
+              <h3 style="color:var(--accent)">Inferred</h3>
+              <ul class="clean">
+                <li>Repeated enterprise product failures could damage reputation.</li>
+                <li>CS teams may be unable to detect churn risk early.</li>
+                <li>Expansion opportunities may be lost due to incomplete account data.</li>
+                <li>Marketing investment may be approved without credible attribution.</li>
+                <li>Conflicting systems may create inaccurate forecasting.</li>
+                <li>Strategic decisions may fail because teams interpret them differently.</li>
+                <li>Overreliance on Stagwell-sourced leads may limit direct enterprise growth.</li>
+                <li>The company may be overestimating delight without objective proof.</li>
+                <li>Rapid launches may create hidden support and implementation costs.</li>
+              </ul>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= MARKET & PRODUCT ================= -->
+        <section class="panel" id="p-market">
+          <div class="eyebrow"><span class="idx">06</span> Customer, Market, Product &amp; Positioning</div>
+          <h2 class="title">Reading the market — and the product</h2>
+          <p class="lede">Insights about enterprise buyers, the expansion opportunity inside existing accounts, product-operating principles, and the messaging that could carry the enterprise narrative.</p>
+
+          <h3 class="sub">Customer &amp; market insights</h3>
+          <div class="grid cols-3">
+            <div class="card"><h3>Enterprise expectations</h3><p style="font-size:14px">Reliable technology, clear onboarding, repeatable implementation, strong reporting, professional support, security &amp; governance, business outcomes, multi-team scalability, clear ownership, and long-term partnership.</p></div>
+            <div class="card"><h3>Buying dynamics</h3><p style="font-size:14px">Enterprise sales are relationship-driven and reputation-sensitive. Customer proof significantly affects conversion — buyers want evidence that similar large organizations trust the company.</p></div>
+            <div class="card"><h3>Advocacy dynamics</h3><p style="font-size:14px">Senior marketers change employers often, and a strong relationship travels with the individual. The individual champion is almost as strategically important as the current corporate account.</p></div>
+          </div>
+          <div class="callout" style="margin-top:18px"><span class="k">Existing-customer opportunity</span>Customers may be unaware of additional products, use cases, new features, multi-workspace capabilities, and enterprise-wide applications. Part of the expansion problem may be a product-education and account-planning problem rather than a lack of demand.</div>
+
+          <hr class="section-rule" />
+
+          <h3 class="sub">Product &amp; feature insights</h3>
+          <div class="grid cols-2">
+            <div class="card"><h3>Product-readiness segmentation</h3><p>Products could be labeled internally by maturity:</p><div class="chip-list"><span class="chip">Experimental</span><span class="chip">Pilot-ready</span><span class="chip">SMB-ready</span><span class="chip">Agency-ready</span><span class="chip">Enterprise-ready</span><span class="chip">Scaled-deployment-ready</span></div></div>
+            <div class="card"><h3>Onboarding analytics</h3><ul class="clean"><li>Completion tracking &amp; drop-off points</li><li>Time to first action · time to first result</li><li>Self-service vs assisted onboarding</li><li>Usage after onboarding · activation milestones</li></ul></div>
+            <div class="card"><h3>Workspace expansion</h3><p>Clearer product support for expansion across:</p><div class="chip-list"><span class="chip">Workspaces</span><span class="chip">Teams</span><span class="chip">Brands</span><span class="chip">Markets</span><span class="chip">Campaigns</span><span class="chip">Business units</span></div></div>
+            <div class="card"><h3>Customer-success visibility</h3><p>Product activity should connect to account data so CS can see whether customers are active, which features they use or ignore, whether usage is rising or declining, and whether expansion conditions are present.</p></div>
+          </div>
+
+          <hr class="section-rule" />
+
+          <h3 class="sub">Messaging &amp; positioning</h3>
+          <div class="grid cols-3">
+            <div class="card"><h3>Around expansion</h3><p style="font-size:14px">Position beyond a single campaign or point solution — emphasize the ability to expand across brands, markets, teams, workspaces, influencer programs, and customer use cases.</p></div>
+            <div class="card"><h3>Around enterprise success</h3><p style="font-size:14px">Credible proof points are highly valuable. If permitted, "trusted by" or "working with" recognized brands could materially improve market confidence.</p></div>
+            <div class="card"><h3>Around customer outcomes</h3><p style="font-size:14px">Thought leadership and sales content should focus on measurable client value rather than general product promotion.</p></div>
+          </div>
+          <h4 class="subsub">Potential content themes</h4>
+          <div class="chip-list">
+            <span class="chip">Improving influencer marketing efficiency</span><span class="chip">Turning influencer data into business decisions</span><span class="chip">Scaling influencer operations across brands</span><span class="chip">Increasing campaign accountability</span><span class="chip">Connecting creator activity to commercial outcomes</span><span class="chip">Reducing fragmented workflows</span>
+          </div>
+          <div class="callout info"><span class="k">Useful internal phrase</span>"Where does it show in the numbers?" — a candidate internal standard for evaluating every strategic claim.</div>
+        </section>
+
+        <!-- ================= QUOTES ================= -->
+        <section class="panel" id="p-quotes">
+          <div class="eyebrow"><span class="idx">07</span> Important Quotes</div>
+          <h2 class="title">In their own words</h2>
+          <p class="lede">The lines from the session that best capture its strategic tensions and convictions.</p>
+
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>This currently is our largest source of revenue… you improve your current source of revenue.</q><p class="why"><b>Why it matters</b> — Establishes a practical principle for prioritizing growth initiatives.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>Ultimately, 80% of revenue is going to come from existing customers. It has to.</q><p class="why"><b>Why it matters</b> — Reflects a strong belief that customer expansion should become a central revenue engine.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>They go to another company, they bring their technology with them.</q><p class="why"><b>Why it matters</b> — Highlights the long-term value of creating individual enterprise champions.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>We must have acquire and succeed with enterprise clients in order to do the delight part.</q><p class="why"><b>Why it matters</b> — Reminds the company that advocacy must be earned through successful execution.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>We launch product very, very quickly, and it's usually 70% of the way there.</q><p class="why"><b>Why it matters</b> — Captures a fundamental tension between product speed and enterprise readiness.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>The process for actualizing strategic shifts [is] chaotic and lacking holistic communication.</q><p class="why"><b>Why it matters</b> — Identifies an organizational issue that may affect every stage of the funnel.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>I had to go to at least four different people, and not one of them had access to everything.</q><p class="why"><b>Why it matters</b> — Direct evidence that the business lacks a dependable single source of truth.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>Even if we go to Salesforce, trash in, trash out.</q><p class="why"><b>Why it matters</b> — Correctly identifies data discipline as separate from software selection.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>We currently don't really have a model for demand generation.</q><p class="why"><b>Why it matters</b> — Defines a major gap in the company's direct growth strategy.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>We put one pound in, we get one pound and one pence back.</q><p class="why"><b>Why it matters</b> — Expresses the need to link marketing spend to measurable expected return.</p></div>
+          <div class="quote-card"><span class="qmark">&ldquo;</span><q>That's why I want a leader for enterprise marketing.</q><p class="why"><b>Why it matters</b> — Identifies the potential need for dedicated senior ownership.</p></div>
+        </section>
+
+        <!-- ================= ACTION ITEMS ================= -->
+        <section class="panel" id="p-actions">
+          <div class="eyebrow"><span class="idx">08</span> Action Items</div>
+          <h2 class="title">From discussion to ownership</h2>
+          <p class="lede">Explicit action items agreed in the room, followed by recommended items that flow from the synthesis — each with an owner and priority.</p>
+
+          <h3 class="sub">Explicit action items</h3>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">1</div><h3>Review the P&amp;G contract</h3></div>
+            <div class="meta-row"><span class="badge high">High priority</span></div>
+            <div class="prose">
+              <div class="detail-line"><span class="dk">Task</span><span>Review the contract and confirm what customer names, brand names, and logos may be used publicly.</span></div>
+              <div class="detail-line"><span class="dk">Owner</span><span>Tom appears to be the likely owner.</span></div>
+              <div class="detail-line"><span class="dk">Outcome</span><span>Written confirmation of what can be used on the website, in sales materials, and in acquisition campaigns.</span></div>
+              <div class="detail-line"><span class="dk">First step</span><span>Send the relevant contract language to the appropriate internal stakeholders for review.</span></div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">2</div><h3>Document revenue leaks with metrics</h3></div>
+            <div class="meta-row"><span class="badge high">High priority</span></div>
+            <div class="prose">
+              <div class="detail-line"><span class="dk">Task</span><span>For each identified funnel leak, define where it appears in the numbers.</span></div>
+              <div class="detail-line"><span class="dk">Owner</span><span>Not yet assigned.</span></div>
+              <div class="detail-line"><span class="dk">Outcome</span><span>A measurable framework for determining whether a problem exists and whether corrective actions are working.</span></div>
+              <h4 class="subsub">Example measures</h4>
+              <div class="chip-list"><span class="chip">Enterprise demos</span><span class="chip">Conversion rate</span><span class="chip">Onboarding completion</span><span class="chip">Time to value</span><span class="chip">Product usage</span><span class="chip">Retention</span><span class="chip">Expansion revenue</span><span class="chip">Case-study participation</span><span class="chip">Referral rate</span></div>
+            </div>
+          </div>
+
+          <div class="item-card">
+            <div class="item-head"><div class="item-badge">3</div><h3>Resurface CRM &amp; data issues in the decision session</h3></div>
+            <div class="meta-row"><span class="badge high">High priority</span></div>
+            <div class="prose">
+              <div class="detail-line"><span class="dk">Task</span><span>Revisit CRM suitability, data quality, and data ownership during the following decision-making session.</span></div>
+              <div class="detail-line"><span class="dk">Owner</span><span>Workshop facilitator or leadership team.</span></div>
+              <div class="detail-line"><span class="dk">Outcome</span><span>Decisions on process, ownership, system requirements, and potential CRM changes.</span></div>
+            </div>
+          </div>
+
+          <h3 class="sub">Recommended action items</h3>
+          <div class="grid cols-2">
+            <div class="card"><div class="meta-row"><span class="badge high">High</span></div><h3>4 · Define the official customer journey</h3><p>One agreed journey covering acquisition, conversion, onboarding, success, retention, expansion, and delight. <br><em style="color:var(--muted)">Owner: Revenue leadership.</em></p></div>
+            <div class="card"><div class="meta-row"><span class="badge high">High</span></div><h3>5 · Enterprise product-readiness checklist</h3><p>Standards a product must meet before it is sold to enterprise customers. <br><em style="color:var(--muted)">Owner: Product leadership with sales &amp; CS.</em></p></div>
+            <div class="card"><div class="meta-row"><span class="badge high">High</span></div><h3>6 · Create an expansion playbook</h3><p>How accounts expand across workspaces, products, teams, brands, and markets. <br><em style="color:var(--muted)">Owner: Sales &amp; CS leadership.</em></p></div>
+            <div class="card"><div class="meta-row"><span class="badge high">High</span></div><h3>7 · Audit existing customer product adoption</h3><p>Identify which products each customer uses and which relevant products remain unused. <br><em style="color:var(--muted)">Owner: CS &amp; revenue operations.</em></p></div>
+            <div class="card"><div class="meta-row"><span class="badge crit">Critical</span></div><h3>8 · Establish data governance</h3><p>Define required data, system ownership, update frequency, validation, and access. <br><em style="color:var(--muted)">Owner: RevOps, finance &amp; CS leadership.</em></p></div>
+            <div class="card"><div class="meta-row"><span class="badge med">Med–High</span></div><h3>9 · Design a demand-generation pilot</h3><p>Test one content-led campaign with a defined audience, distribution plan, conversion goal, and budget. <br><em style="color:var(--muted)">Owner: Enterprise marketing owner / interim team.</em></p></div>
+            <div class="card"><div class="meta-row"><span class="badge med">Medium</span></div><h3>10 · Define customer advocacy triggers</h3><p>When and how satisfied customers should be asked for referrals, logos, quotes, or case studies. <br><em style="color:var(--muted)">Owner: CS &amp; marketing.</em></p></div>
+            <div class="card"><div class="meta-row"><span class="badge high">High</span></div><h3>11 · Strategic change communication process</h3><p>Formalize how major decisions move from leadership to cross-functional execution. <br><em style="color:var(--muted)">Owner: Executive leadership / operations.</em></p></div>
+          </div>
+        </section>
+
+        <!-- ================= ROADMAP ================= -->
+        <section class="panel" id="p-roadmap">
+          <div class="eyebrow"><span class="idx">09</span> Recommended Next Steps</div>
+          <h2 class="title">A phased roadmap</h2>
+          <p class="lede">Sequenced from immediate moves through the next 30 days into longer-term capability building.</p>
+
+          <div class="timeline">
+            <div class="phase">
+              <span class="node"></span>
+              <span class="when">Immediate</span>
+              <h3>Establish the foundations</h3>
+              <ol class="clean">
+                <li>Confirm contractual permissions relating to P&amp;G and other enterprise logos.</li>
+                <li>Agree on the official customer journey.</li>
+                <li>Define one primary metric for each funnel stage.</li>
+                <li>Audit the completeness and reliability of customer and revenue data.</li>
+                <li>Identify the most important products that are not currently enterprise-ready.</li>
+                <li>Review the highest-potential existing accounts for expansion.</li>
+              </ol>
+            </div>
+            <div class="phase">
+              <span class="node"></span>
+              <span class="when">Next 30 days</span>
+              <h3>Build the operating tools</h3>
+              <ol class="clean">
+                <li>Build an enterprise product-readiness checklist.</li>
+                <li>Create an account success-plan template.</li>
+                <li>Create an expansion map for priority accounts.</li>
+                <li>Define customer advocacy eligibility criteria.</li>
+                <li>Clarify whether Close CRM can meet core business requirements.</li>
+                <li>Assign interim or permanent ownership for enterprise marketing.</li>
+                <li>Design a small demand-generation pilot.</li>
+              </ol>
+            </div>
+            <div class="phase">
+              <span class="node"></span>
+              <span class="when">Longer-term</span>
+              <h3>Compound the capability</h3>
+              <ol class="clean">
+                <li>Establish a full revenue-operations framework.</li>
+                <li>Integrate sales, finance, customer-success, and product-usage data.</li>
+                <li>Build repeatable enterprise acquisition channels beyond Stagwell.</li>
+                <li>Develop a library of enterprise case studies.</li>
+                <li>Introduce quarterly account expansion reviews.</li>
+                <li>Create formal product maturity and release stages.</li>
+                <li>Track customer advocacy as a measurable business outcome.</li>
+              </ol>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= TAKEAWAYS ================= -->
+        <section class="panel" id="p-takeaways">
+          <div class="eyebrow"><span class="idx">10</span> Final Takeaways</div>
+          <h2 class="title">Twelve things to hold onto</h2>
+          <p class="lede">The strategic conclusions of the session — plus the discrete facts worth preserving as the work moves forward.</p>
+
+          <ol class="clean" style="margin-top:20px">
+            <li>The biggest near-term growth opportunity may be improving and expanding <strong>existing revenue</strong> rather than focusing only on new acquisition.</li>
+            <li>Enterprise growth requires a <strong>coordinated system</strong> connecting acquisition, conversion, product readiness, onboarding, success, expansion, and advocacy.</li>
+            <li>The company should treat <strong>product immaturity as a measurable revenue leak</strong>.</li>
+            <li>Customer expansion must become a <strong>designed process</strong>, not an occasional outcome.</li>
+            <li>Enterprise <strong>delight can become an acquisition channel</strong> through referrals, logos, case studies, and executive mobility.</li>
+            <li>There is not yet a <strong>repeatable direct enterprise demand-generation model</strong>.</li>
+            <li>Content marketing creates limited value without a clear audience, distribution plan, conversion mechanism, and measurement strategy.</li>
+            <li>Fragmented, unreliable data is <strong>blocking effective decision-making</strong> across sales, CS, marketing, and finance.</li>
+            <li>Replacing the CRM may eventually be necessary, but <strong>stronger data governance must come first</strong>.</li>
+            <li>Strategic changes require a more <strong>disciplined implementation and communication process</strong>.</li>
+            <li>Every perceived revenue leak should be <strong>linked to a number</strong> that shows whether the problem is improving or worsening.</li>
+            <li>Dedicated <strong>ownership for enterprise marketing</strong> may be necessary to turn the opportunity into a repeatable growth engine.</li>
+          </ol>
+
+          <hr class="section-rule" />
+
+          <h3 class="sub">Information worth preserving</h3>
+          <div class="grid cols-2">
+            <div class="card"><ul class="clean"><li>Existing customers are expected to become the source of a substantial portion of future revenue.</li><li>Multiple products are currently underused by customers.</li><li>Enterprise workspace expansion is not yet mapped clearly.</li><li>Customer delight may create referrals that persist when executives move companies.</li><li>P&amp;G may be a valuable public proof point, subject to contractual approval.</li><li>Successful onboarding was identified as a key indicator of customer success.</li><li>Rapid product launches may be causing lost enterprise opportunities.</li></ul></div>
+            <div class="card"><ul class="clean"><li>Non-Stagwell enterprise acquisition remains underdeveloped.</li><li>Customer information currently requires coordination across multiple people.</li><li>Close CRM may not support all sales, CS, and finance requirements.</li><li>Data-quality problems will remain even after a CRM migration unless governance improves.</li><li>Thought leadership, webinars, and podcasts were identified as low-hanging content opportunities.</li><li>Content creation requires an activation and distribution strategy.</li><li>Enterprise marketing may require dedicated leadership.</li></ul></div>
+          </div>
+
+          <div class="callout" style="margin-top:24px"><span class="k">Transcript limitation</span>The transcript ends during the enterprise marketing discussion and appears to be incomplete. Additional content may contain further priorities, decisions, or action items not reflected here. Because most speakers are not consistently identified in the transcript, names are attributed only where reasonably clear.</div>
+        </section>
+
+        <!-- Pager -->
+        <div class="pager" id="pager"></div>
+      </main>
+    </div>
+  </div>
+
+  <script>
+    const SECTIONS = [
+      { id: 'overview',      label: 'Overview',              nav: 'Executive Summary' },
+      { id: 'themes',        label: 'Discussion Themes',     nav: 'Key Themes' },
+      { id: 'insights',      label: 'Strategic Insights',    nav: 'Strategic Insights' },
+      { id: 'opportunities', label: 'Best Opportunities',    nav: 'Opportunities' },
+      { id: 'alignment',     label: 'Alignment & Questions', nav: 'Alignment & Open Qs' },
+      { id: 'risks',         label: 'Risks & Constraints',   nav: 'Risks' },
+      { id: 'market',        label: 'Market & Product',      nav: 'Market · Product · Msg' },
+      { id: 'quotes',        label: 'Important Quotes',      nav: 'Quotes' },
+      { id: 'actions',       label: 'Action Items',          nav: 'Action Items' },
+      { id: 'roadmap',       label: 'Recommended Steps',     nav: 'Roadmap' },
+      { id: 'takeaways',     label: 'Final Takeaways',       nav: 'Takeaways' },
+    ];
+
+    const nav = document.getElementById('nav');
+    SECTIONS.forEach((s, i) => {
+      const b = document.createElement('button');
+      b.className = 'nav-item' + (i === 0 ? ' active' : '');
+      b.dataset.target = s.id;
+      b.innerHTML = '<span class="nav-num">' + (i + 1) + '</span><span>' + s.nav + '</span>';
+      b.addEventListener('click', () => go(s.id));
+      nav.appendChild(b);
+    });
+
+    const sidebar = document.getElementById('sidebar');
+    const backdrop = document.getElementById('backdrop');
+    const menuBtn = document.getElementById('menuBtn');
+    const pager = document.getElementById('pager');
+
+    function closeDrawer() { sidebar.classList.remove('open'); backdrop.classList.remove('show'); }
+    function openDrawer() { sidebar.classList.add('open'); backdrop.classList.add('show'); }
+    menuBtn.addEventListener('click', openDrawer);
+    backdrop.addEventListener('click', closeDrawer);
+
+    function renderPager(idx) {
+      const prev = SECTIONS[idx - 1];
+      const next = SECTIONS[idx + 1];
+      pager.innerHTML = '';
+      const mk = (s, dir) => {
+        const btn = document.createElement('button');
+        if (!s) { btn.disabled = true; btn.className = dir === 'next' ? 'next' : ''; return btn; }
+        btn.className = dir === 'next' ? 'next' : '';
+        btn.innerHTML = '<div class="dir">' + (dir === 'next' ? 'Next' : 'Previous') + '</div><div class="lab">' + s.label + '</div>';
+        btn.addEventListener('click', () => go(s.id));
+        return btn;
+      };
+      pager.appendChild(mk(prev, 'prev'));
+      pager.appendChild(mk(next, 'next'));
+    }
+
+    function go(id) {
+      const idx = SECTIONS.findIndex(s => s.id === id);
+      document.querySelectorAll('.panel').forEach(p => p.classList.remove('active'));
+      document.getElementById('p-' + id).classList.add('active');
+      document.querySelectorAll('.nav-item').forEach(n => n.classList.toggle('active', n.dataset.target === id));
+      renderPager(idx);
+      closeDrawer();
+      document.querySelector('.main').scrollTo({ top: 0, behavior: 'smooth' });
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+      if (history.replaceState) history.replaceState(null, '', '#' + id);
+    }
+
+    // init from hash
+    const initial = (location.hash || '').replace('#', '');
+    if (SECTIONS.some(s => s.id === initial)) { go(initial); } else { renderPager(0); }
+  </script>
+</body>
+</html>
