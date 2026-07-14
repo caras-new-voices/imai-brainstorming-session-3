@@ -375,6 +375,34 @@
       .pager { flex-direction: column; }
       .pager .next { text-align: left; }
     }
+
+    /* ---------- Deck CTA (top of content) ---------- */
+    .deck-cta {
+      display: flex; align-items: center; justify-content: space-between; gap: 22px;
+      text-decoration: none; color: #fff;
+      background: linear-gradient(120deg, var(--primary-dark), var(--primary) 70%, #6366f1);
+      border-radius: var(--radius); padding: 22px 26px; margin-bottom: 34px;
+      box-shadow: var(--shadow); transition: transform .15s ease, box-shadow .2s ease;
+    }
+    .deck-cta:hover { transform: translateY(-2px); box-shadow: 0 14px 34px rgba(79,70,229,.32); }
+    .deck-cta-tag { display: inline-block; font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: #c7d2fe; margin-bottom: 7px; }
+    .deck-cta-title { display: block; font-family: var(--serif); font-size: 23px; font-weight: 600; letter-spacing: -0.01em; line-height: 1.15; }
+    .deck-cta-sub { display: block; font-size: 14px; color: #e3e6ff; margin-top: 7px; max-width: 62ch; line-height: 1.5; }
+    .deck-cta-arrow { flex: 0 0 auto; font-weight: 600; font-size: 14.5px; background: rgba(255,255,255,.16); padding: 11px 18px; border-radius: 100px; white-space: nowrap; }
+    @media (max-width: 600px) { .deck-cta { flex-direction: column; align-items: flex-start; gap: 16px; } .deck-cta-arrow { width: 100%; text-align: center; } }
+
+    /* ---------- Deck link (sidebar) ---------- */
+    .deck-link {
+      display: flex; align-items: center; gap: 11px; text-decoration: none;
+      margin: 16px 12px 4px; padding: 11px 12px; border-radius: var(--radius-sm);
+      background: var(--primary-soft); border: 1px solid #dcdffb;
+      transition: background .15s ease;
+    }
+    .deck-link:hover { background: #e4e7fe; }
+    .deck-link-ic { width: 27px; height: 27px; border-radius: 8px; background: var(--primary); color: #fff; display: grid; place-items: center; font-size: 10px; flex: 0 0 auto; }
+    .deck-link-t { display: block; font-size: 13.5px; font-weight: 600; color: var(--primary-dark); line-height: 1.2; }
+    .deck-link-s { display: block; font-size: 11.5px; color: var(--muted); margin-top: 1px; }
+    .deck-link-ar { margin-left: auto; color: var(--primary); font-weight: 700; font-size: 15px; }
   </style>
 </head>
 <body>
@@ -387,6 +415,11 @@
         <h1>InfluencerMarketing<span class="ai">.ai</span></h1>
         <p>Strategic Revenue Funnel &amp; Growth Workshop</p>
       </div>
+      <a class="deck-link" href="deck.html">
+        <span class="deck-link-ic">▶</span>
+        <span><span class="deck-link-t">Operating Plan Deck</span><span class="deck-link-s">The 100 day plan · slides</span></span>
+        <span class="deck-link-ar">↗</span>
+      </a>
       <nav class="nav" id="nav">
         <div class="nav-label">Sections</div>
         <!-- nav items injected by JS -->
@@ -409,6 +442,14 @@
       <main class="content" id="content">
         <!-- ================= OVERVIEW ================= -->
         <section class="panel active" id="p-overview">
+          <a class="deck-cta" href="deck.html">
+            <span class="deck-cta-main">
+              <span class="deck-cta-tag">▶ Slide Deck</span>
+              <span class="deck-cta-title">The 100 Day Operating Plan</span>
+              <span class="deck-cta-sub">The presentable plan: how we fix the bottlenecks, assign owners, map feature to revenue, wire our channels, and chart the path from $2M to $200M.</span>
+            </span>
+            <span class="deck-cta-arrow">View the deck →</span>
+          </a>
           <div class="hero">
             <div class="kicker"><span class="bar"></span> Executive Summary</div>
             <h2>Finding the revenue leaks — and the <span class="em">growth engines</span> hiding in plain sight.</h2>
